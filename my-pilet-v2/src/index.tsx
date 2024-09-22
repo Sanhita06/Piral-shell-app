@@ -14,7 +14,6 @@ export function setup(app: PiletApi) {
   app.registerMenu(() => (
     <>
       <Link to="/page">Go to Pilet v2</Link>
-      
     </>
   ));
 

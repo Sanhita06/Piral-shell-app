@@ -10,7 +10,8 @@
     "importHelpers": true
   },
   "include": [
-    "src"
+    "src",
+    "src/piral-extension.d.ts"
   ],
   "exclude": [
     "node_modules"
