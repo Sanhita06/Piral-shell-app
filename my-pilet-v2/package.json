@@ -1,6 +1,6 @@
 {
   "name": "my-pilet-v2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "keywords": [
     "pilet"
@@ -35,5 +35,6 @@
     ],
     "imports": {}
   },
-  "source": "src/index.tsx"
+  "source": "src/index.tsx",
+  "app": "src/index.tsx" 
 }

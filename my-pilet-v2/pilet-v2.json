@@ -1,0 +1,13 @@
+{
+    "items": [
+      {
+        "name": "pilet-v2",
+        "version": "1.0.1",
+        "spec": "v2",
+        "dependencies": {},
+        "link": "http://10.196.88.191:9002/dist/index.js",
+        "requireRef": "pilet-v2",
+        "basePath": "/"
+      }
+    ]
+  }

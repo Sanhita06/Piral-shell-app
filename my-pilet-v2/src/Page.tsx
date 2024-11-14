@@ -1,20 +1,22 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { useGlobalState } from 'piral-core';
+//import { useGlobalState } from 'piral-core';
 //app getdata
-type CustomGlobalState = {
-  selectedOption: string;
-};
+// type CustomGlobalState = {
+//   selectedOption: string;
+// };
+export interface PageProps {
+user :string
+}
 
-export default () => {
   //const state = useGlobalState();
-  const state = useGlobalState() as unknown as CustomGlobalState | undefined; 
+  //const state = useGlobalState() as unknown as CustomGlobalState | undefined; 
   // Ensure that state is defined before accessing selectedOption
-  const selectedOption = state?.selectedOption || 'None';
-
+  //const selectedOption = state?.selectedOption || 'None';
+  const Page: React.FC<PageProps> = ({ user }) => {
   return (
     <>
-      <h1>This is from pilet version 2 -- Selected Option: {selectedOption}</h1>
+      <h1>This is from pilet version 2 -- Selected Option: {user} </h1>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat reiciendis illum qui nulla adipisci, laudantium
         vitae atque dicta blanditiis ab. Quae deleniti eum sapiente temporibus tenetur, maxime quibusdam iure nisi.
@@ -32,3 +34,4 @@ export default () => {
     </>
   );
 };
+export default Page;

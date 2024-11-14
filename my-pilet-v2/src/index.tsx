@@ -1,12 +1,34 @@
-import * as React from 'react';
+// pilet-v2/index.tsx
 import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import type { PiletApi } from 'my-piral-app';
-
 const Page = React.lazy(() => import('./Page'));
 
 export function setup(app: PiletApi) {
-  app.registerPage('/page', Page);
+  const connect = app.createConnector(() => Promise.resolve(true));
+  
+  // Register page component
+  app.registerPage('/page', connect(() => {
+    console.log('inside child app: ');
+    return <Page user={app.getData('user')} />;
+  }));
 
+  const SelectedValueTile: React.FC = () => {
+    const [selectedValue, setSelectedValue] = useState<string>('');
+
+    useEffect(() => {
+      const handleSelectChange = (event: { value: string }) => {
+        console.log('Received value in pilet-v2:', event.value); 
+        setSelectedValue(event.value);
+      };
+      app.on('selectChange', handleSelectChange);
+      return () => {
+        app.off('selectChange', handleSelectChange);
+      };
+    }, []);
+
+    return <div>Welcome to Pilet v2! Selected Value: {selectedValue || 'None'}</div>;
+  };
   app.showNotification('Hello from Pilet v2!', {
     autoClose: 2000,
   });
@@ -17,7 +39,7 @@ export function setup(app: PiletApi) {
     </>
   ));
 
-  app.registerTile(() => <div>Welcome to Pilet v2!</div>, {
+  app.registerTile(SelectedValueTile, {
     initialColumns: 2,
     initialRows: 2,
   });
