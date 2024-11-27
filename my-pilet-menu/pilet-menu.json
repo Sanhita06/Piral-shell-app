@@ -1,0 +1,15 @@
+{
+  "items": [
+    {
+      "name": "my-pilet-menu",
+      "version": "1.0.0",
+      "spec": "v2",
+      "dependencies": {},
+      "link": "http://10.196.162.179:9001/dist/index.js",
+      "requireRef": "my-pilet-menu",
+      "basePath": "/",
+      "schemaVersion": "v2",
+      "app": "my-piral-app"
+    }
+  ]
+}

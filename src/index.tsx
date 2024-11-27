@@ -1,18 +1,19 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { createInstance, Piral, createStandardApi } from 'piral';
-import { layout, errors } from './layout';
+import { layout } from './layout';
 
 // Define feed URLs for each pilet
 const feedUrls = [
-  'http://10.196.88.191:9001/pilet-v1.json',
-  'http://10.196.88.191:9002/pilet-v2.json'
+  'http://10.196.162.179:9001/pilet-menu.json', 
+  'http://10.196.162.179:9002/pilet-v1.json',   
+  'http://10.196.162.179:9003/pilet-v2.json',   
 ];
 
 const instance = createInstance({
   state: {
     components: layout,
-    errorComponents: errors,
+  
   },
   plugins: [...createStandardApi()],
   async requestPilets() {
@@ -42,6 +43,12 @@ const instance = createInstance({
   },
 });
 
-const root = createRoot(document.querySelector('#app'));
-
-root.render(<Piral instance={instance} />);
+//const root = createRoot(document.querySelector('#app'));
+const container = document.querySelector('#app'); // Get the DOM element
+if (container) {
+  const root = createRoot(container); // Create the React root
+  root.render(<Piral instance={instance} />);
+} else {
+  console.error("Failed to find the root element for rendering!");
+}
+//root.render(<Piral instance={instance} />);

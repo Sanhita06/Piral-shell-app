@@ -1,0 +1,44 @@
+{
+  "name": "my-pilet-menu",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "pilet"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.5.0",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.6",
+    "my-piral-app": "file:../dist/emulator/my-piral-app-1.0.1.tgz",
+    "piral-cli": "1.7.2",
+    "piral-cli-webpack5": "1.7.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router": "5.3.4",
+    "react-router-dom": "5.3.4",
+    "typescript": "^5.3.0"
+  },
+  "scripts": {
+    "start": "pilet debug",
+    "build": "pilet build",
+    "upgrade": "pilet upgrade",
+    "postinstall": "pilet declaration"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "importmap": {
+    "inherit": [
+      "my-piral-app"
+    ],
+    "imports": {}
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3",
+    "tslib": "^2.5.2"
+  },
+  "source": "src/index.tsx",
+  "app": "src/index.tsx"
+}

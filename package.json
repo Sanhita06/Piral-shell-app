@@ -1,23 +1,25 @@
 {
   "name": "my-piral-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "keywords": [
     "piral"
   ],
   "dependencies": {
-    "piral": "1.6.1",
-    "piral-base": "1.6.1",
-    "piral-core": "1.6.1",
+    "piral": "1.7.2",
+    "piral-base": "1.7.2",
+    "piral-core": "1.7.2",
     "react": "^18",
     "react-dom": "^18",
     "react-router": "^5",
-    "react-router-dom": "^5"
+    "react-router-dom": "^5",
+    "tslib": "^2.5.2"
   },
   "scripts": {
-    "start": "piral debug",
-    "build": "piral build",
-    "postinstall": "piral declaration"
+    "start": "pilet debug",
+    "build": "pilet build",
+    "postinstall": "pilet declaration",
+    "upgrade": "pilet upgrade"
   },
   "app": "./src/index.html",
   "types": "dist/index.d.ts",
@@ -26,17 +28,27 @@
     "inherit": [
       "piral-base",
       "piral-core",
-      "piral"
+      "piral",
+      "empty-piral"
     ]
   },
   "devDependencies": {
     "@types/node": "latest",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "*",
+    "@types/react-dom": "*",
     "@types/react-router": "^5",
     "@types/react-router-dom": "^5",
-    "piral-cli": "1.6.1",
-    "piral-cli-webpack5": "1.6.1",
+    "empty-piral": "1.7.2",
+    "piral-cli": "1.7.2",
+    "piral-cli-webpack5": "1.7.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-router": "^5",
+    "react-router-dom": "^5",
     "typescript": "latest"
-  }
+  },
+  "source": "src/index.tsx",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
