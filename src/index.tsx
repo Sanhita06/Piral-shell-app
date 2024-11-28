@@ -5,9 +5,9 @@ import { layout } from './layout';
 
 // Define feed URLs for each pilet
 const feedUrls = [
-  'http://10.196.162.179:9001/pilet-menu.json', 
-  'http://10.196.162.179:9002/pilet-v1.json',   
-  'http://10.196.162.179:9003/pilet-v2.json',   
+  'http://10.238.132.206:9001/pilet-menu.json', 
+  'http://10.238.132.206:9002/pilet-v1.json',   
+  'http://10.238.132.206:9003/pilet-v2.json',   
 ];
 
 const instance = createInstance({

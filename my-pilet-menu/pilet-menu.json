@@ -5,7 +5,7 @@
       "version": "1.0.0",
       "spec": "v2",
       "dependencies": {},
-      "link": "http://10.196.162.179:9001/dist/index.js",
+      "link": "http://10.238.132.206:9001/dist/index.js",
       "requireRef": "my-pilet-menu",
       "basePath": "/",
       "schemaVersion": "v2",
